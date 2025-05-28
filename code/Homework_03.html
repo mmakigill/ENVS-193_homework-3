@@ -67,6 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="Homework_03_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Homework_03_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Homework_03_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="Homework_03_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="Homework_03_files/libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 </head>
@@ -96,6 +98,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="https://github.com/mmakigill/ENVS-193_homework-3.git">GitHub Repository</a></p>
+<section id="set-up" class="level1">
+<h1>Set Up</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -124,8 +129,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stderr">
 <pre><code>here() starts at /home/jovyan/Real_ENVS193_Homework_03/ENVS-193_homework-3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)       </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'flextable' was built under R version 4.4.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'flextable'
+
+The following object is masked from 'package:purrr':
+
+    compose</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'janitor' was built under R version 4.4.2</code></pre>
 </div>
@@ -137,11 +153,65 @@ The following objects are masked from 'package:stats':
 
     chisq.test, fisher.test</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><em>Part Two: Problems</em></p>
-<p>[A] To compare my response variable and it’s fluctuation between categories in my data, I could calculate the mean water footprint in gallons for each meal type (omnivore, vegetarian etc.) to compare the impact of different dietary choices on water use. Different diets include foods with varying water demands (meat vs.&nbsp;vegetables), which will provide an informative comparison of how food choices could reduce overall daily water consumption.</p>
+<p><em>Problem 1: Personal Data</em></p>
+<p><strong>[A]</strong> To compare my response variable and it’s fluctuation between categories in my data, I could calculate the mean water footprint in gallons for each meal type (omnivore, vegetarian etc.) to compare the impact of different dietary choices on water use. Different diets include foods with varying water demands (meat vs.&nbsp;vegetables), which will provide an informative comparison of how food choices could reduce overall daily water consumption.</p>
+<p><strong>[B]</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Meal_Data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"Meal_Data.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 82 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (4): Meal_Time, Meal_Type, Packaging_Type, Food_Groups
+dbl  (2): Meal_Size, Water_Footprint
+date (1): Date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Meal_Data, <span class="fu">aes</span>(<span class="at">x =</span> Meal_Type, <span class="at">y =</span> Water_Footprint, <span class="at">fill =</span> Meal_Type)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span>  <span class="co"># show individual data points</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>, <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Omnivore"</span> <span class="ot">=</span> <span class="st">"Brown"</span>, <span class="st">"Vegetarian"</span> <span class="ot">=</span> <span class="st">"Dark Green"</span>, <span class="st">"Vegan"</span> <span class="ot">=</span> <span class="st">"Light Blue"</span>, <span class="st">"Pescatarian"</span> <span class="ot">=</span> <span class="st">"Coral"</span>, <span class="st">"Carnivore"</span> <span class="ot">=</span> <span class="st">"Red"</span>)) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Mean Water Footprint by Meal Type"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Meal Type"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Water Footprint (gallons)"</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Homework_03_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figure 1.</strong> This chart displays the mean water footprint (in gallons) for different diets (Carnivore, Omnivore, Pescatarian, Vegan, Vegetarian), with individual meal data displayed as jittered points. In the chart, omnivore and carnivore meals generally have the highest average water footprint, while vegetarian and pescatarian meals tend to have the lowest.</p>
+<p><strong>[D]</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create summary table</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> summary_table <span class="ot">&lt;-</span> Meal_Data <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(Meal_Type) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarize</span>(<span class="at">mean_water_footprint =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Water_Footprint), <span class="dv">1</span>))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create flextable</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">flextable</span>(summary_table) <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">set_header_labels</span>(</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">meal_type =</span> <span class="st">"Meal Type"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">mean_water_footprint =</span> <span class="st">"Mean Water Footprint (gallons)"</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">autofit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-d4724a4c{}.cl-d46c56b4{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d46ecfc0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d46ecfca{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d46eec9e{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eeca8{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eeca9{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecb2{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecbc{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecbd{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecc6{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecc7{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d4724a4c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-d46eec9e"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Meal_Type</span></p></th><th class="cl-d46eeca8"><p class="cl-d46ecfca"><span class="cl-d46c56b4">Mean Water Footprint (gallons)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-d46eeca9"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Carnivore</span></p></td><td class="cl-d46eecb2"><p class="cl-d46ecfca"><span class="cl-d46c56b4">179.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eeca9"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Omnivore</span></p></td><td class="cl-d46eecb2"><p class="cl-d46ecfca"><span class="cl-d46c56b4">179.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eeca9"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Pescatarian</span></p></td><td class="cl-d46eecb2"><p class="cl-d46ecfca"><span class="cl-d46c56b4">105.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eecbc"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Vegan</span></p></td><td class="cl-d46eecbd"><p class="cl-d46ecfca"><span class="cl-d46c56b4">123.9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eecc6"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Vegetarian</span></p></td><td class="cl-d46eecc7"><p class="cl-d46ecfca"><span class="cl-d46c56b4">95.3</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
