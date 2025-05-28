@@ -36,3 +36,8 @@ ggplot(Meal_Data, aes(x = Meal_Type, y = Water_Footprint, fill = Meal_Type)) +
   theme_minimal(base_size = 14) +
   theme(legend.position = "none")
 ```
+**Figure 1.** This chart displays the mean water footprint (in gallons) for different diets (Carnivore, Omnivore, Pescatarian, Vegan, Vegetarian), with individual meal data displayed as jittered points. In the chart, omnivore and carnivore meals generally have the highest average water footprint, while vegetarian and pescatarian meals tend to have the lowest.
+
+
+
+
