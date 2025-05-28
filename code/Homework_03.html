@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marissa Maki Gill">
+<meta name="dcterms.date" content="2025-05-28">
 
-<title>Homework_03</title>
+<title>ENVS 193DS - Homework 03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,14 +83,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework_03</h1>
+<h1 class="title">ENVS 193DS - Homework 03</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marissa Maki Gill </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 28, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -99,118 +113,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><a href="https://github.com/mmakigill/ENVS-193_homework-3.git">GitHub Repository</a></p>
-<section id="set-up" class="level1">
-<h1>Set Up</h1>
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyverse' was built under R version 4.4.2</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)       </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Meal_Data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"Meal_Data.csv"</span>)) <span class="co"># Read in and store collected water footprint per meal data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'lubridate' was built under R version 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.4     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /home/jovyan/Real_ENVS193_Homework_03/ENVS-193_homework-3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'flextable' was built under R version 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'flextable'
-
-The following object is masked from 'package:purrr':
-
-    compose</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'janitor' was built under R version 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'janitor'
-
-The following objects are masked from 'package:stats':
-
-    chisq.test, fisher.test</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>Problem 1: Personal Data</em></p>
+</section>
+<section id="problem-1-personal-data" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-personal-data"><em>Problem 1: Personal Data</em></h2>
 <p><strong>[A]</strong> To compare my response variable and it’s fluctuation between categories in my data, I could calculate the mean water footprint in gallons for each meal type (omnivore, vegetarian etc.) to compare the impact of different dietary choices on water use. Different diets include foods with varying water demands (meat vs.&nbsp;vegetables), which will provide an informative comparison of how food choices could reduce overall daily water consumption.</p>
 <p><strong>[B]</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Meal_Data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"Meal_Data.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 82 Columns: 7
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (4): Meal_Time, Meal_Type, Packaging_Type, Food_Groups
-dbl  (2): Meal_Size, Water_Footprint
-date (1): Date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Meal_Data, <span class="fu">aes</span>(<span class="at">x =</span> Meal_Type, <span class="at">y =</span> Water_Footprint, <span class="at">fill =</span> Meal_Type)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span>  <span class="co"># show individual data points</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>, <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Omnivore"</span> <span class="ot">=</span> <span class="st">"Brown"</span>, <span class="st">"Vegetarian"</span> <span class="ot">=</span> <span class="st">"Dark Green"</span>, <span class="st">"Vegan"</span> <span class="ot">=</span> <span class="st">"Light Blue"</span>, <span class="st">"Pescatarian"</span> <span class="ot">=</span> <span class="st">"Coral"</span>, <span class="st">"Carnivore"</span> <span class="ot">=</span> <span class="st">"Red"</span>)) <span class="sc">+</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Mean Water Footprint by Meal Type"</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Meal Type"</span>,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Water Footprint (gallons)"</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot to visualize Water_Footprint by Meal_Type</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Meal_Data, <span class="fu">aes</span>(<span class="at">x =</span> Meal_Type, <span class="at">y =</span> Water_Footprint, <span class="at">fill =</span> Meal_Type)) <span class="sc">+</span>  </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span>  <span class="co"># show individual data points</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>, <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span> <span class="co"># calculates summary statistics</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Omnivore"</span> <span class="ot">=</span> <span class="st">"Brown"</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Vegetarian"</span> <span class="ot">=</span> <span class="st">"Dark Green"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Vegan"</span> <span class="ot">=</span> <span class="st">"Light Blue"</span>, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pescatarian"</span> <span class="ot">=</span> <span class="st">"Coral"</span>, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Carnivore"</span> <span class="ot">=</span> <span class="st">"Red"</span>)) <span class="sc">+</span> <span class="co"># specify colors for each Meal_Type category</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Add labels and title to the plot</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Mean Water Footprint by Meal Type"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Meal Type"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Water Footprint (gallons)"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span> <span class="co"># Use a minimal theme</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># Removes legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Homework_03_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Homework_03_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p><strong>[C]</strong></p>
 <p><strong>Figure 1.</strong> This chart displays the mean water footprint (in gallons) for different diets (Carnivore, Omnivore, Pescatarian, Vegan, Vegetarian), with individual meal data displayed as jittered points. In the chart, omnivore and carnivore meals generally have the highest average water footprint, while vegetarian and pescatarian meals tend to have the lowest.</p>
 <p><strong>[D]</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create summary table</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> summary_table <span class="ot">&lt;-</span> Meal_Data <span class="sc">|&gt;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(Meal_Type) <span class="sc">|&gt;</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarize</span>(<span class="at">mean_water_footprint =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Water_Footprint), <span class="dv">1</span>))</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create flextable</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">flextable</span>(summary_table) <span class="sc">|&gt;</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">set_header_labels</span>(</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">meal_type =</span> <span class="st">"Meal Type"</span>,</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">mean_water_footprint =</span> <span class="st">"Mean Water Footprint (gallons)"</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">|&gt;</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">autofit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create summary table</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> summary_table <span class="ot">&lt;-</span> Meal_Data <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(Meal_Type) <span class="sc">|&gt;</span> <span class="co"># Group dataset by meal type</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarize</span>(<span class="at">mean_water_footprint =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Water_Footprint), <span class="dv">1</span>)) <span class="co"># Calculate the mean water footprint rounded to 1 decimal place</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create flextable</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">flextable</span>(summary_table) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">set_header_labels</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">meal_type =</span> <span class="st">"Meal Type"</span>, <span class="co"># Column header</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">mean_water_footprint =</span> <span class="st">"Mean Water Footprint (gallons)"</span> <span class="co"># Column header</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">|&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">autofit</span>() <span class="co"># Adjusts column widths</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-d4724a4c{}.cl-d46c56b4{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d46ecfc0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d46ecfca{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d46eec9e{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eeca8{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eeca9{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecb2{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecbc{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecbd{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecc6{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d46eecc7{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d4724a4c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-d46eec9e"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Meal_Type</span></p></th><th class="cl-d46eeca8"><p class="cl-d46ecfca"><span class="cl-d46c56b4">Mean Water Footprint (gallons)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-d46eeca9"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Carnivore</span></p></td><td class="cl-d46eecb2"><p class="cl-d46ecfca"><span class="cl-d46c56b4">179.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eeca9"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Omnivore</span></p></td><td class="cl-d46eecb2"><p class="cl-d46ecfca"><span class="cl-d46c56b4">179.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eeca9"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Pescatarian</span></p></td><td class="cl-d46eecb2"><p class="cl-d46ecfca"><span class="cl-d46c56b4">105.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eecbc"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Vegan</span></p></td><td class="cl-d46eecbd"><p class="cl-d46ecfca"><span class="cl-d46c56b4">123.9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d46eecc6"><p class="cl-d46ecfc0"><span class="cl-d46c56b4">Vegetarian</span></p></td><td class="cl-d46eecc7"><p class="cl-d46ecfca"><span class="cl-d46c56b4">95.3</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-fe9baee6{}.cl-fe9505a0{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fe97f74c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fe97f756{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fe981862{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe98186c{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe981876{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe981877{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe981880{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe981881{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe98188a{width:1.178in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fe98188b{width:2.667in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-fe9baee6"><thead><tr style="overflow-wrap:break-word;"><th class="cl-fe981862"><p class="cl-fe97f74c"><span class="cl-fe9505a0">Meal_Type</span></p></th><th class="cl-fe98186c"><p class="cl-fe97f756"><span class="cl-fe9505a0">Mean Water Footprint (gallons)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-fe981876"><p class="cl-fe97f74c"><span class="cl-fe9505a0">Carnivore</span></p></td><td class="cl-fe981877"><p class="cl-fe97f756"><span class="cl-fe9505a0">179.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fe981876"><p class="cl-fe97f74c"><span class="cl-fe9505a0">Omnivore</span></p></td><td class="cl-fe981877"><p class="cl-fe97f756"><span class="cl-fe9505a0">179.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fe981876"><p class="cl-fe97f74c"><span class="cl-fe9505a0">Pescatarian</span></p></td><td class="cl-fe981877"><p class="cl-fe97f756"><span class="cl-fe9505a0">105.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fe981880"><p class="cl-fe97f74c"><span class="cl-fe9505a0">Vegan</span></p></td><td class="cl-fe981881"><p class="cl-fe97f756"><span class="cl-fe9505a0">123.9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fe98188a"><p class="cl-fe97f74c"><span class="cl-fe9505a0">Vegetarian</span></p></td><td class="cl-fe98188b"><p class="cl-fe97f756"><span class="cl-fe9505a0">95.3</span></p></td></tr></tbody></table></div>
 </div>
 </div>
+</section>
+<section id="problem-2-affective-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-affective-visualization"><em>Problem 2: Affective Visualization</em></h2>
+<p><strong>[A]</strong> An effective visualization for my data could include a drawing of plants to represent each meal type. The meals with the highest water footprints would be wilting and dry, while the meals with the lowest water footprints would be growing, green and healthy. This visualization could help to communicate the unseen impacts of our eating choices by representing how sustainable eating can support nature while resource depletion from agriculture and meal choices is unsustainable for our environment.</p>
+<p><strong>[B] Visual Sketch</strong> <img src="images/plant_viz_sketch.jpg" class="img-fluid" width="468"></p>
+<p><strong>[C] Visual Draft</strong> <img src="images/plant_viz_final.jpg" class="img-fluid" width="455"></p>
+<p><strong>[D] Artist Statement</strong> This piece depicts the environmental impacts of my meals with a plant metaphor, where each type of meal I eat is represented by the growth of plants and the water availability in that environment. Meal types with higher average water footprints based on my study, are drawn wilted and depleted of nutrients in a desert, while those with lower water footprints are shown to grow tall and green in a meadow. Inspired by Lorraine Woodruff-Long’s warming strips quilt, where she uses art to convey a subtle but powerful message about climate change, I decided to also pursue a creative way to relate my data to the viewer. The form of my final work is an illustration drawn by hand, using both ink and colored pencils. My choice of an analog medium also stems from the physical connection we have to nature and how our environment is impacted by everyday choices. I started creating this work by collecting data on the meals I ate everyday throughout my test period, sorting each meal into categories and calculating their water footprints. After my data collection and analysis I sketched the meal types with the highest to lowest water footprints as flowers with varying degrees of health. I then refined the color palette and layout to create a desert to garden visual based on the meal impact.</p>
+</section>
+<section id="problem-3-statistical-critique" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-statistical-critique"><em>Problem 3: Statistical Critique</em></h2>
+<p><strong>[A]</strong> “The authors of this article pose to answer the question of how domestic pollution and agricultural activities effect water quality in the Turnasuyu Basin, in Turkey. They aim to asses the spatial and temporal water quality of the stream to evalulate suitability and risk for human use. The statistical tests this paper used to find an answer to their research were Analysis of Variance [(Response: temperature, pH, DO and other water quality parameters), (Predictor: season, sampling station)], and the Kruskal-Wallis test [(Response: salinity, NO3-N, etc), (Predictor: Season or Station)].”</p>
+<p><img src="https://envs193ds.lsit.ucsb.edu/user/mmakigill/rstudio/files/Real_ENVS193_Homework_03/ENVS-193_homework-3/images/Screenshot%202025-05-27%20at%2011.26.06%20PM.png" class="img-fluid" width="390"></p>
+<p><strong>[B]</strong> The figure inserted from this paper depicts boxplot graphs of hydrochemical parameters, assessing seasonal variation and data normality, providing a functional and communicative representation of the data. The authors effectively place the x and y axes, and clearly label each one with the x-axis representing individual seasons for each box, and the y-axis displaying a different chemical content for each figure. Each boxplot also displays the summary statistics, including the median, interquartile range (IQR), and minimum and maximum values.</p>
+<p><strong>[C]</strong> The authors handled visual clutter very well with their figure in the paper, by using clean and simple box plots for each chemical found in the tested waters. Because they used boxplots, there are no distracting elements, and the data:ink ratio is very high. Each visual element and line within the graphs depicts important information about the data (medians, quartiles etc.), preventing unnecessary clutter by only including relevant summary statistics and focusing the presentation.</p>
+<p><strong>[D]</strong> While overall the authors did very well communicating the results of their collected data, as a viewer I would suggest a few additions to make the visual even more effective. One suggestion I have is to use distinctive colors for each season and plot. By using a different color gradient for each hydrochemical chart, with the spring box being the lightest color and the winter box being the darkest, the seasonal comparison as well as the chemical differentiation is more visually immediate and helps for quicker recognition of trends. Another suggestion I have is to include individual data in the boxplots with overlayed jitter points. This addition may decrease the aesthetic clarity of the plots but it could increase the visual clarity by displaying the distribution of the data. This would also help to identify clusters of data and outliers within the boxes.</p>
 </section>
 
 </main>
