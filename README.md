@@ -3,9 +3,9 @@ Homework 03 for ENVS-193DS: Data Science
 
 
 ## General information
-What is this repo for?
 
-Whose repo is it? Who is contributing to it?
+The purpose of this repository is to store data and code changes for the ENVS 193DS: Data Science homework assignment 3. The repository is structured to facilitate the analysis and visualization of environmental data. It is owned by GitHub user mmakigill, a student enrolled in the ENVS-193DS course. All contributions and commits are made soley by the owner.
+
 
 ## Data and file information
 
@@ -19,6 +19,5 @@ Whose repo is it? Who is contributing to it?
 
 
 ## Rendered output
-Link to the rendered output. Make sure it is a working url. You can test this by sharing the url with someone else to open on their computer - if it doesn't work, that means your GitHub pages set up didn't work.
 
 https://envs193ds.lsit.ucsb.edu/user/mmakigill/rstudio/p/3e051c2e/ 
