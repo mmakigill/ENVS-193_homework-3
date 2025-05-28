@@ -1,0 +1,22 @@
+---
+title: "Homework_03"
+format: html
+---
+[GitHub Repository](https://github.com/mmakigill/ENVS-193_homework-3.git)
+
+# Set Up
+
+```{r}
+# Load packages
+library(tidyverse)
+library(here)
+library(gt)       
+library(janitor)  
+library(ggplot2)
+library(readr)
+```
+
+*Part Two: Problems*
+
+[A] To compare my response variable and it's fluctuation between categories in my data, I could calculate the mean water footprint in gallons for each meal type (omnivore, vegetarian etc.) to compare the impact of different dietary choices on water use. Different diets include foods with varying water demands (meat vs. vegetables), which will provide an informative comparison of how food choices could reduce overall daily water consumption.
+
