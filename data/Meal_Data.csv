@@ -1,0 +1,83 @@
+Date,Meal_Time,Meal_Size,Meal_Type,Packaging_Type,Food_Groups,Water_Footprint
+2025-04-17,Lunch,1,Vegan,Homemade,"Protein, Veggetables",123.9
+2025-04-17,Dinner,1,Vegan,Homemade,"Protein, Veggetables",123.9
+2025-04-18,Breakfast,1,Vegetarian,Homeade,"Dairy, Fruits, Grains",104.38
+2025-04-18,Dinner,2,Omnivore,Homeade,"Protein, Dairy, Vegetables, Grains",164.5
+2025-04-19,Breakfast,1,Carnivore,Takeout,"Dairy, Protein, Grains",210.75
+2025-04-19,Lunch,2,Omnivore,Takeout,"Protein, Vegetables, Dairy",137
+2025-04-19,Dinner,2,Omnivore,Homeade,"Protein, Grains, Dairy, Vegetables",128.5
+2025-04-20,Lunch,3,Omnivore,Homeade,"Dairy, Protein, Vegetables",212
+2025-04-20,Dinner,3,Omnivore,Takeout,"Protein, Vegetables, Grains",114.3
+2025-04-21,Breakfatst,2,Vegetarian,Homeade,"Protein, Vegetables",125
+2025-04-21,Dinner,1,Omnivore,Packaged,"Protein, Vegetables",168.6
+2025-04-22,Lunch,1,Vegetarian,Packaged,"Protein, Fruits, Grains",53.75
+2025-04-22,Dinner,3,Omnivore,Takeout,"Protein, Vegetables, Dairy",291.5
+2025-04-23,Breakfast,1,Vegetarian,Homeade,"Dairy, Fruits, Grains",104.38
+2025-04-23,Dinner,3,Omnivore,Homeade,"Protein, Vegetables, Grains",175
+2025-04-24,Lunch,2,Vegetarian,Homeade,"Fruits, Dairy, Grains",104.38
+2025-04-24,Dinner,2,Pescatarian,Homeade,"Protein, Vegetables, Dairy",38
+2025-04-25,Breakfast,1,Omnivore,Takeout,"Protein, Grains, Dairy",165.5
+2025-04-25,Lunch,2,Omnivore,Homeade,"Protein, Grains, Dairy, Vegetables",248.25
+2025-04-25,Dinner,2,Omnivore,Homeade,"Protein, Grains, Dairy, Vegetables",248.25
+2025-04-26,Lunch,2,Omnivore,Takeout,"Protein, Grains, Vegetable",98.52
+2025-04-26,Dinner,2,Pescatarian,Takeout,"Protein, Grains, Vegetables",61.5
+2025-04-27,Breakfast,1,Omnivore,Takeout,"Protein, Grains, Dairy",165.5
+2025-04-27,Lunch,3,Omnivore,Takeout,"Protein, Grains",166
+2025-04-27,Dinner,1,Omnivore,Homeade,"Vegetables, Grains",164
+2025-04-28,Lunch,2,Vegetarian,Packaged,"Grains, Vegetables",114
+2025-04-28,Dinner,2,Pescatarian,Homeade,"Protein, Vegetables",249
+2025-04-29,Lunch,1,Vegetarian,Homeade,"Protein, Dairy, Grains",67
+2025-04-29,Dinner,3,Omnivore,Takeout,"Protein, Grains, Vegetables",217
+2025-04-30,Lunch,2,Omnivore,Packaged,"Grains, Protein",170.25
+2025-04-30,Dinner,2,Omnivore,Takeout,"Protein, Grains, Vegetables",217
+2025-05-01,Lunch,2,Omnivore,Takeout,"Protein, Grains, Vegetables, Dairy",195
+2025-05-01,Dinner,2,Omnivore,Homeade,"Grain, Vegetable",170.25
+2025-05-02,Lunch,1,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",166.25
+2025-05-02,Dinner,2,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",195
+2025-05-03,Breakfast,2,Omnivore,Takeout,"Grain, Protein ",87
+2025-05-03,Lunch,2,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",195
+2025-05-03,Dinner,2,Omnivore,Takeout,"Grain, Protein, Vegetable",98.52
+2025-05-04,Breakfast,2,Vegetarian,Homeade,"Protein, Dairy, Fruit, Grains",67
+2025-05-04,Lunch,2,Pescatarian,Homeade,"Protein, Dairy, Grains",84.15
+2025-05-04,Dinner,3,Omnivore,Homeade,"Protein, Grains, Vegetables",89.25
+2025-05-05,Breakfast,1,Vegetarian,Homeade,"Protein, Vegetables, dairy",69.5
+2025-05-05,Dinner,3,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",287.05
+2025-05-06,Breakfast,2,Omnivore,Homeade,"Dairy, Grain",105.75
+2025-05-06,Dinner,2,Pescatarian,Homeade,"Protein, Dairy, Grains",84.15
+2025-05-07,Lunch,3,Omnivore,Homeade,"Grain, Protein",89.25
+2025-05-07,Dinner,2,Omnivore,Homeade,"Protein, Grain",123.1
+2025-05-08,Lunch,2,Vegetarian,Homeade,"Grain, Vegetable",103.5
+2025-05-08,Dinner,2,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",195
+2025-05-09,Breakfast,2,Omnivore,Takeout,"Grain, Dairy, Protein ",324.25
+2025-05-09,Dinner,3,Pescatarian,Homeade,"Vegetable, Protein",48.45
+2025-05-10,Lunch,2,Vegetarian,Homeade,"Grain, Vegetable",22.5
+2025-05-10,Dinner,3,Omnivore,Homeade,"Grain, Dairy, Protein, Fruit",149
+2025-05-11,Breakfast,1,Vegetarian,Homeade,"Grain, Vegetable, Dairy",67.25
+2025-05-11,Dinner,2,Vegetarian,Packaged,"Grain, Dairy",151
+2025-05-12,Breakfast,1,Vegetarian,Homeade,"Grain, Dairy, Vegetable",158.5
+2025-05-12,Lunch,3,Pescatarian,Packaged,"Protein, Grains, Vegetables",61.5
+2025-05-12,Dinner,2,Omnivore,Takeout,"Grain, Protein, Dairy, Vegetable",291.5
+2025-05-13,Breakfast,1,Vegetarian,Homeade,"Grain, Dairy, Vegetable",158.5
+2025-05-14,Lunch,2,Vegetarian,Homeade,"Vegetables, Grains",89.7
+2025-05-15,Breakfast,1,Vegetarian,Homeade,"Grain, Dairy, Vegetable",158.5
+2025-05-15,Dinner,3,Vegetarian,Homeade,"Vegetable, Protein",64.75
+2025-05-16,Lunch,2,Omnivore,Takeout,"Protein, Dairy, Grain ",216
+2025-05-16,Dinner,2,Vegetarian,Homeade,"Grain, Dairy, Protein",157
+2025-05-17,Breakfast,2,Vegetarian,Homeade,"Vegetable, Grain, Dairy",66
+2025-05-17,Dinner,2,Pescatarian,Homeade,"Protein, Grain, Vegetable",73.65
+2025-05-18,Breakfast,2,Omnivore,Homeade,"Grain, Dairy, Protein",103.5
+2025-05-18,Dinner,3,Carnivore,Takeout,"Grain, Protein",148
+2025-05-19,Breakfast,1,Vegetarian,Homeade,"Vegetable, Fruit",67
+2025-05-19,Dinner,1,Omnivore,Homeade,"Grain, Protein, Vegtable, Dairy",212.25
+2025-05-20,Breakfast,1,Vegetarian,Homeade,"Vegetable, Fruit",67
+2025-05-20,Dinner,2,Omnivore,Homeade,"Protein, Grains, Vegetables",198.5
+2025-05-21,Lunch,3,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",166.25
+2025-05-21,Dinner,3,Omnivore,Takeout,"Grain, Protein, Vegetable, Dairy",195
+2025-05-22,Breakfast,2,Vegetarian,Homeade,"Grain, Dairy",63
+2025-05-22,Dinner,2,Omnivore,Takeout,"Protein, Grains, Vegetables",217
+2025-05-23,Breakfast,2,Vegetarian,Homeade,"Protein, Grains, Fruit, Dairy",74.5
+2025-05-23,Dinner,3,Pescatarian,Homeade,"Protein, Vegetable",249
+2025-05-24,Breakfast,2,Vegetarian,Homeade,"Grain, Dairy",63
+2025-05-24,Lunch,1,Vegetarian,Homeade,"Dairy, Grain, Fruit",67
+2025-05-25,Breakfast,1,Vegetarian,Homeade,"Dairy, Grain, Protein, Vegetable",164.25
+2025-05-25,Dinner,,Omnivore,Homemade,"Dairy, Grain, Protein",195
