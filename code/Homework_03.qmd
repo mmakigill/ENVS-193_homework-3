@@ -2,6 +2,7 @@
 title: "Homework_03"
 format: html
 ---
+
 [GitHub Repository](https://github.com/mmakigill/ENVS-193_homework-3.git)
 
 # Set Up
@@ -18,9 +19,9 @@ library(readr)
 
 *Problem 1: Personal Data*
 
-**[A]** To compare my response variable and it's fluctuation between categories in my data, I could calculate the mean water footprint in gallons for each meal type (omnivore, vegetarian etc.) to compare the impact of different dietary choices on water use. Different diets include foods with varying water demands (meat vs. vegetables), which will provide an informative comparison of how food choices could reduce overall daily water consumption.
+**\[A\]** To compare my response variable and it's fluctuation between categories in my data, I could calculate the mean water footprint in gallons for each meal type (omnivore, vegetarian etc.) to compare the impact of different dietary choices on water use. Different diets include foods with varying water demands (meat vs. vegetables), which will provide an informative comparison of how food choices could reduce overall daily water consumption.
 
-**[B]**
+**\[B\]**
 
 ```{r}
 
@@ -40,11 +41,10 @@ ggplot(Meal_Data, aes(x = Meal_Type, y = Water_Footprint, fill = Meal_Type)) +
   theme_minimal(base_size = 14) +
   theme(legend.position = "none")
 ```
+
 **Figure 1.** This chart displays the mean water footprint (in gallons) for different diets (Carnivore, Omnivore, Pescatarian, Vegan, Vegetarian), with individual meal data displayed as jittered points. In the chart, omnivore and carnivore meals generally have the highest average water footprint, while vegetarian and pescatarian meals tend to have the lowest.
 
-
-
-**[D]**
+**\[D\]**
 
 ```{r}
 # Create summary table
@@ -61,5 +61,9 @@ ggplot(Meal_Data, aes(x = Meal_Type, y = Water_Footprint, fill = Meal_Type)) +
    autofit()
 ```
 
+**Problem 2: Affective Visualization**
+
+**[A]** An effective visualization for my data could include a drawing of plants to represent each meal type. The meals with the highest water footprints would be wilting and dry, while the meals with the lowest water footprints would be growing, green and healthy. This visualization could help to communicate the unseen impacts of our eating choices by representing how sustainable eating can support nature while resource depletion from agriculture and meal choices is unsustainable for our environment.
 
 
+```{}
