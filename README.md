@@ -20,4 +20,4 @@ The purpose of this repository is to store data and code changes for the ENVS 19
 
 ## Rendered output
 
-https://envs193ds.lsit.ucsb.edu/user/mmakigill/rstudio/p/3e051c2e/ 
+https://mmakigill.github.io/ENVS-193_homework-3/code/Homework_03.html
