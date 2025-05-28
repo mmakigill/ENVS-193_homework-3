@@ -3,6 +3,8 @@ title: "Homework_03"
 format: html
 ---
 
+minor change
+
 [GitHub Repository](https://github.com/mmakigill/ENVS-193_homework-3.git)
 
 # Set Up
