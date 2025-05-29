@@ -81,9 +81,9 @@ ggplot(Meal_Data, aes(x = Meal_Type, y = Water_Footprint, fill = Meal_Type)) +
 
 **\[A\]** An effective visualization for my data could include a drawing of plants to represent each meal type. The meals with the highest water footprints would be wilting and dry, while the meals with the lowest water footprints would be growing, green and healthy. This visualization could help to communicate the unseen impacts of our eating choices by representing how sustainable eating can support nature while resource depletion from agriculture and meal choices is unsustainable for our environment.
 
-**\[B\] Visual Sketch**
+**\[B\] Visual Sketch** ![](images/plant_viz_sketch.jpg){width="354"}
 
-**\[C\] Visual Draft**
+**\[C\] Visual Draft** ![](images/statistic_critique_fig.png){width="532"}
 
 **\[D\] Artist Statement** This piece depicts the environmental impacts of my meals with a plant metaphor, where each type of meal I eat is represented by the growth of plants and the water availability in that environment. Meal types with higher average water footprints based on my study, are drawn wilted and depleted of nutrients in a desert, while those with lower water footprints are shown to grow tall and green in a meadow. Inspired by Lorraine Woodruff-Long’s warming strips quilt, where she uses art to convey a subtle but powerful message about climate change, I decided to also pursue a creative way to relate my data to the viewer. The form of my final work is an illustration drawn by hand, using both ink and colored pencils. My choice of an analog medium also stems from the physical connection we have to nature and how our environment is impacted by everyday choices. I started creating this work by collecting data on the meals I ate everyday throughout my test period, sorting each meal into categories and calculating their water footprints. After my data collection and analysis I sketched the meal types with the highest to lowest water footprints as flowers with varying degrees of health. I then refined the color palette and layout to create a desert to garden visual based on the meal impact.
 
